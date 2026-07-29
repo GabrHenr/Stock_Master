@@ -1,22 +1,26 @@
 import datetime as dt
+from fastapi import HTTPException
+from dotenv import load_dotenv
+import os
 import jwt
-from enums import AcessoTipos
-JWT_ACCESS_TOKEN_EXPIRE_MINUTES = 15
-JWT_SECRET_KEY = "Aksjdiawnjnakhsbyabwjkmcio19028dshaiudnad"
-JWT_ALGORITHM = "HS256"
-class ServicosJWT:
+
+
+class ServicosJwt:
+    load_dotenv()
     @staticmethod
-    def criar_jwt(acesso:AcessoTipos, email:str, id:int):
-        dados:dict = {"acesso":acesso, "email": email, "id":id}
-        expire = dt.datetime.now(tz=dt.timezone.utc)+ dt.timedelta(minutes=JWT_ACCESS_TOKEN_EXPIRE_MINUTES)
+    def criar_jwt(tipo,email,id:int):
+        dados = {"tipo":tipo, "email": email, "id": id}
+        expire = dt.datetime.now(tz=dt.timezone.utc) + dt.timedelta(
+            minutes=int(os.getenv("JWT_ACCESS_TOKEN_EXPIRE_MINUTES"))
+        )
         dados.update({"exp": expire})
-        jwt_codificado = jwt.encode(dados,JWT_SECRET_KEY,JWT_ALGORITHM)
+        jwt_codificado = jwt.encode(dados,os.getenv("JWT_SECRET_KEY"),algorithm=os.getenv("JWT_ALGORITHM"))
         return jwt_codificado
     @staticmethod
-    def jwt_validar_e_retornar_dados(jwt_para_validar):
+    def validar_e_retornar_dados_jwt(dados_para_validar):
         try:
-            dados:dict = jwt.decode(jwt_para_validar,JWT_SECRET_KEY,[JWT_ALGORITHM])
+            dados:dict = jwt.decode(dados_para_validar,os.getenv("JWT_SECRET_KEY"),algorithms=[os.getenv("JWT_ALGORITHM")])
         except:
-            raise
-        return dados    
-        
+            raise HTTPException(status_code=401, detail="Token Expirado")
+        return dados
+    pass
