@@ -17,18 +17,23 @@ Abaixo seguem as imagens das regras mapeadas, e quaisquer alterações serão do
 ### Regras de estoque
 
 - Adicionar estoque
+
   ![Adicionar estoque](doc_assets/Adicionar_Estoque.png)
 
 - Retirar estoque
+
   ![Retirar estoque](doc_assets/Retirar_Estoque.png)
 
 - Monitorar quantidade
+
   ![Monitorar quantidade](doc_assets/Monitorar_Quantidade.png)
 
 - Controle de vencimento
+
   ![Controle de vencimento](doc_assets/Vencimento.png)
 
 - Regra de 5 meses
+
   ![Regra de 5 meses](doc_assets/Regra_5_meses.png)
 
 
@@ -36,6 +41,7 @@ Abaixo seguem as imagens das regras mapeadas, e quaisquer alterações serão do
 Abaixo segue o schema inicial do banco de dados relacional
 
 - Schema
+
   ![Schema](doc_assets/Schema.png)
 
 
