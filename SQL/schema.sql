@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS lotes(
     id SERIAL PRIMARY KEY,
     lote_quantidade_atual INT NOT NULL,
     lote_numero VARCHAR(50) NOT NULL,
-    lote_data_registro TIMESTAMP DEFAULT NOW(),
+    lote_data_registro TIMESTAMPTZ DEFAULT NOW(),
     lote_data_vencimento DATE NOT NULL,
     lote_data_fabricacao DATE NOT NULL,
     produto_id INT NOT NULL REFERENCES produtos(id),
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS movimentacoes_estoque(
     movimentacoes_estoque_tipo movimentacoes_tipos NOT NULL,
     quantidade_unidades INT NOT NULL,
     movimentacoes_estoque_motivo VARCHAR(255) NOT NULL,
-    movimentacoes_estoque_data TIMESTAMP DEFAULT NOW(),
+    movimentacoes_estoque_data TIMESTAMPTZ DEFAULT NOW(),
     
     CHECK (quantidade_unidades > 0)
 );
