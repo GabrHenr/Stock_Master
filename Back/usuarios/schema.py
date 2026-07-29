@@ -8,3 +8,4 @@ class LoginResponse(BaseModel):
     nome: str
     sobrenome: str
     acesso: AcessoTipos
+    

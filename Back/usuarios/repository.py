@@ -14,3 +14,4 @@ class UsuarioRepository:
         resultado = await self.session.execute(statement)
         usuario = resultado.scalar_one_or_none()
         return usuario
+
