@@ -68,7 +68,7 @@ class Lotes(Base):
 
 class MovimentacoesEstoque(Base):
     __tablename__ = "movimentacoes_estoque"
-    __table_args__ = CheckConstraint("quantidade_unidades > 0")
+    __table_args__ = (CheckConstraint("quantidade_unidades > 0", name="ck_quantidade_unidades"),)
     id: Mapped[int] = mapped_column(primary_key=True)
     lote_id: Mapped[int] = mapped_column(ForeignKey("lotes.id"), nullable=False)
     usuario_id: Mapped[int] = mapped_column(ForeignKey("usuarios.id"), nullable=False)

@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
 from sqlalchemy.orm import DeclarativeBase
 
-DATABASE_URL = 'postgresql://postgres:1234@localhost:5432/PlayTest'
+DATABASE_URL = 'postgresql+psycopg://postgres:1234@localhost:5432/PlayTest'
 engine = create_async_engine(url = DATABASE_URL, echo = True)
 
 
