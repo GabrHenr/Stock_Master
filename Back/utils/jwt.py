@@ -8,8 +8,8 @@ import jwt
 class ServicosJwt:
     load_dotenv()
     @staticmethod
-    def criar_jwt(tipo,email,id:int):
-        dados = {"tipo":tipo, "email": email, "id": id}
+    def criar_jwt(acesso,email,id:int):
+        dados = {"acesso":acesso, "email": email, "id": id}
         expire = dt.datetime.now(tz=dt.timezone.utc) + dt.timedelta(
             minutes=int(os.getenv("JWT_ACCESS_TOKEN_EXPIRE_MINUTES"))
         )
