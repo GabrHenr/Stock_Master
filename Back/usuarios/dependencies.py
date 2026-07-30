@@ -10,7 +10,9 @@ def get_usuario_repository(
 ) -> UsuarioRepository:
     return UsuarioRepository(session)
 
+
 def get_usuario_service(
+    session: AsyncSession = Depends(get_session),
     repository: UsuarioRepository = Depends(get_usuario_repository),
 ) -> UsuariosService:
-    return UsuariosService(repository)
+    return UsuariosService(session=session, repository=repository)
