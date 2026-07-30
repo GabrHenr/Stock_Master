@@ -2,10 +2,10 @@
 from enum import Enum
 
 class AcessoTipos(str,Enum):
-    REPOSITOR = 'repositor'
-    ESTOQUISTA = 'estoquista'
+    repositor = 'repositor'
+    estoquista = 'estoquista'
 
 class MovimentacoesTipos(str,Enum):
-    ENTRADA = 'entrada'
-    SAIDA = 'saida'
-    AJUSTE = 'ajuste'
+    entrada = 'entrada'
+    saida = 'saida'
+    ajuste = 'ajuste'

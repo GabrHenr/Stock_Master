@@ -15,4 +15,4 @@ def get_usuario_service(
     session: AsyncSession = Depends(get_session),
     repository: UsuarioRepository = Depends(get_usuario_repository),
 ) -> UsuariosService:
-    return UsuariosService(session=session, repository=repository)
+    return UsuariosService(session=session, usuario_repository=repository)
