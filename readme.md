@@ -7,8 +7,6 @@ Este é um projeto básico de gerenciamento de estoque, o motivo deste projeto �
 -   PostgreSQL
 -   SQLAlchemy 2X
 
-## Arquitetura
-Este projeto está sendo desenvolvido como um monolito.
 
 ## Regras Mapeadas
 
