@@ -35,6 +35,12 @@ Abaixo seguem as imagens das regras mapeadas, e quaisquer alterações serão do
   ![Regra de 5 meses](doc_assets/Regra_5_meses.png)
 
 
+## Regra de negócio
+Criar regras para impedir usar numeros em nome da marca e normalizar as entradas.
+
+## ToDo
+Configurar o BD para UTF-8.
+
 ## Desenho BD
 Abaixo segue o schema inicial do banco de dados relacional
 

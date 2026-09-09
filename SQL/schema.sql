@@ -4,7 +4,7 @@ CREATE TYPE movimentacoes_tipos AS ENUM ('entrada','saida','ajuste');
 
 CREATE TABLE IF NOT EXISTS marcas (
     id SERIAL PRIMARY KEY,
-    nome VARCHAR(150) NOT NULL UNIQUE
+    nome VARCHAR(70) NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS usuarios (

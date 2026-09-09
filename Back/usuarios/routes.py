@@ -3,7 +3,7 @@ import usuarios.schemas as schemas
 from usuarios.services import UsuariosService
 from usuarios.dependencies import get_usuario_service
 
-router = APIRouter(prefix="/user", tags=["Main Route"])
+router = APIRouter(prefix="/user", tags=["Rota User"])
 
 
 @router.post("/login", response_model=schemas.LoginResponse)

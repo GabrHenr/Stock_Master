@@ -23,4 +23,4 @@ class ServicosJwt:
         except:
             raise HTTPException(status_code=401, detail="Token Expirado")
         return dados
-    pass
+    

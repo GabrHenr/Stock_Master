@@ -1,8 +1,8 @@
 from fastapi import Depends
-from database import get_session
 from sqlalchemy.ext.asyncio import AsyncSession
 from .services import UsuariosService
 from .repository import UsuarioRepository
+from ..dependencies.database import get_session
 
 
 def get_usuario_repository(

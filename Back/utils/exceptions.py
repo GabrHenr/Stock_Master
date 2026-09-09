@@ -7,3 +7,9 @@ class HttpException:
             status_code= 401,
             detail= "Senha ou usuário incorretos"
         )
+    @staticmethod
+    def item_ja_registrado():
+        return HttpException(
+            status_code = 409,
+            detail= "Item já registrado"
+        )
